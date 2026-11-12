@@ -72,20 +72,17 @@ git clone https://github.com/itsnicoramos/Spec-to-ship.git /tmp/hb && cp -R /tmp
 Then just work. The skill activates on its own — "wire this up", "the board keeps resetting",
 "nothing happens when I upload", or a bare "it's not working" with a board in the room.
 
-## Plugins
+## Experimental: Matt Pocock's skills
 
-This repo is also a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`).
-
-| Plugin | What it is |
-|---|---|
-| [`mattpocock-skills`](plugins/mattpocock-skills) | Matt Pocock's 27 promoted engineering skills (grilling, spec/ticket flows, TDD, code review, domain modelling), vendored under MIT |
+`plugins/mattpocock-skills/` holds the 27 promoted skills from
+[mattpocock/skills](https://github.com/mattpocock/skills) (MIT), vendored for local
+experimenting. Not published to any marketplace. Load it for one session:
 
 ```bash
-claude plugin marketplace add itsnicoramos/Spec-to-ship
-claude plugin install mattpocock-skills@spec-to-ship
+claude --plugin-dir plugins/mattpocock-skills
 ```
 
-Refresh the vendored copy from upstream with `scripts/sync-mattpocock-skills.sh`.
+Refresh from upstream with `scripts/sync-mattpocock-skills.sh`.
 
 ## Toolchains
 
@@ -115,8 +112,7 @@ skill/
 evals/                  does it fire, and does it refuse to lie under pressure
 docs/                   design notes
 .claude/skills/         advancing-the-bench — the loop that improves this repo
-.claude-plugin/         marketplace manifest
-plugins/                Claude Code plugins (mattpocock-skills, vendored)
+plugins/                mattpocock-skills, vendored for local testing
 scripts/                sync-mattpocock-skills.sh — re-vendor from upstream
 SPEC.md                 bench console requirements
 apps/console/           the operator's phone app (Next.js + TypeScript + Supabase)

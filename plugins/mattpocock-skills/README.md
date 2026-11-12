@@ -1,17 +1,16 @@
 # mattpocock-skills (vendored)
 
 The 27 promoted skills from [mattpocock/skills](https://github.com/mattpocock/skills),
-packaged as a Claude Code plugin in this repo's marketplace. MIT, copyright Matt Pocock;
+vendored here for local experimenting (not published to any marketplace). MIT, copyright Matt Pocock;
 see [LICENSE](LICENSE). The upstream commit is pinned in [UPSTREAM_SHA](UPSTREAM_SHA).
 
 Only the promoted set ships (the skills listed in upstream's own `.claude-plugin/plugin.json`).
 `in-progress/`, `misc/` and `deprecated/` are left out on purpose.
 
-## Install
+## Try it
 
 ```bash
-claude plugin marketplace add itsnicoramos/Spec-to-ship
-claude plugin install mattpocock-skills@spec-to-ship
+claude --plugin-dir plugins/mattpocock-skills
 ```
 
 Skills are namespaced as `mattpocock-skills:<name>` (e.g. `/mattpocock-skills:tdd`), so they
